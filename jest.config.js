@@ -6,7 +6,7 @@
 const jest = {
     moduleDirectories: ['node_modules'],
     testEnvironment: 'node',
-    collectCoverage: false,
+    collectCoverage: true,
     coveragePathIgnorePatterns: ['<rootDir>/(.*/?)__sandbox__'],
     testPathIgnorePatterns: ['<rootDir>/(.*/?)__sandbox__'],
 
