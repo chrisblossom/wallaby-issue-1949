@@ -11,6 +11,7 @@ const wallaby = (wallabyConfig) => {
 
     return {
         files: [
+            { pattern: 'lib/cli-cmd-file.js', instrument: false },
             { pattern: 'lib/**/__sandbox__/**/*', instrument: false },
             { pattern: 'lib/**/__sandbox__/**/.*', instrument: false },
             { pattern: 'lib/files/*', instrument: false },
@@ -80,6 +81,9 @@ const wallaby = (wallabyConfig) => {
              * reset to expected wallaby process.cwd
              */
             process.chdir(setupConfig.projectCacheDir);
+
+            fs.chmodSync('./lib/__sandbox__/sandbox-cli-cmd-file.js', '755');
+            fs.chmodSync('./lib/cli-cmd-file.js', '755');
         },
     };
 };
